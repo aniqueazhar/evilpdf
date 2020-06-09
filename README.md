@@ -12,10 +12,22 @@ Hiding executable files in PDF documents
 Usage of EvilPDF for attacking targets without prior mutual consent is illegal. It's the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program 
 
 ### Usage:
+
+In Case of Linux
+````
+apt install mingw-w64
+apt install php
+
+```` 
+Python3 is used
 ```
 git clone https://github.com/thelinuxchoice/evilpdf
 cd evilpdf
-python -m pip install pypdf2
+
+python -m pip install -r requirements.txt
+or
+pip install -r requirements.txt
+
 python evilpdf.py
 ```
 ### Donate!
